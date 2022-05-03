@@ -1,7 +1,7 @@
 #微服务建议一定要写服务端口号和微服务名称
 server:
   #端口号
-  port: 8001
+  port: 8002
 
 spring:
   application:
