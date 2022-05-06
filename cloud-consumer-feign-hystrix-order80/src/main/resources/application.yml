@@ -1,0 +1,20 @@
+server:
+  port: 80
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+#用于服务降级，在注释@FeignClient中添加fallbackFactory属性值
+feign:
+  hystrix:
+    enabled: true
+
+
+##需要加上，否则会报错
+#ribbon:
+#  ReadTimeout: 4000
+#  ConnectTimeout: 4000
