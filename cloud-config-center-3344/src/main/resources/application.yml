@@ -10,12 +10,24 @@ spring:
       server:
         git:
           uri: https://github.com/zhangjl2002/springcloud-config.git  #git的仓库地址
-          search-paths:   #搜索目录
+          search-paths: #搜索目录
             - springcloud-config
       label: main   #读取的分支
 
+  rabbitmq:
+    host: 192.168.245.100  #本机写localhost，服务器的写服务器地址
+    port: 5672   #客户端和RabbitMQ进行通信的端口
+    username: admin #默认也是guest
+    password: 123 #默认也是guest
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka   #服务注册到的eureka地址
+
+#RabbitMQ相关配置
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
