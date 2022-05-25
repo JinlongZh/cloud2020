@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.controller;
+package com.gangu.springcloud.controller;
 
 
 import org.springframework.beans.factory.annotation.Value;
