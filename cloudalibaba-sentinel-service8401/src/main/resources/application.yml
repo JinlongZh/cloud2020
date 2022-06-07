@@ -15,6 +15,14 @@ spring:
         dashboard: 192.168.245.100:8858
         # 默认8719端口，假如被占用了会自动从8719端口+1进行扫描，直到找到未被占用的 端口
         port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.245.100:8848  #nacos
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 
 
 management:
@@ -22,3 +30,7 @@ management:
     web:
       exposure:
         include: '*'
+
+feign:
+  sentinel:
+    enabled: true #激活Sentinel 对Feign的支持
